@@ -24,7 +24,8 @@
       </div>
     </div>
     <script>
-      document.dispatchEvent( new KeyboardEvent( "keydonw",{key: "a" })) ;
+      document.dispatchEvent( new KeyboardEvent( "keydown",{key: "a" })) ;
+      console.log("keydown");
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
