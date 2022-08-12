@@ -30,7 +30,7 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
-
+      canvas.focus();
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -69,6 +69,7 @@
         showBanner: unityShowBanner,
       };
 
+
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
       // Set this to false if you want to decouple this synchronization from
@@ -98,7 +99,6 @@
 
         canvas.style.width = "960px";
         canvas.style.height = "600px";
-        canvas.focus();
       }
 
       loadingBar.style.display = "block";
