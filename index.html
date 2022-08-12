@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | iGEMEducationGame</title>
+    <title>Unity WebGL Player | BiosensorPuzzle</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,10 +20,23 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">iGEMEducationGame</div>
+        <div id="unity-build-title">BiosensorPuzzle</div>
       </div>
     </div>
     <script>
+      document.dispatchEvent( new KeyboardEvent( "keydown",{key: "a" })) ;
+      console.log("keydown");
+
+      document.body.addEventListener('click', () => console.log('clicked'))
+      const evt = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+        clientX: 20,
+      });
+      document.body.dispatchEvent(evt);
+
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
@@ -58,15 +71,16 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/BiosensorPuzzle.loader.js";
       var config = {
-        dataUrl: buildUrl + "/BiosensorPuzzle.data.br",
-        frameworkUrl: buildUrl + "/BiosensorPuzzle.framework.js.br",
-        codeUrl: buildUrl + "/BiosensorPuzzle.wasm.br",
+        dataUrl: buildUrl + "/BiosensorPuzzle.data.unityweb",
+        frameworkUrl: buildUrl + "/BiosensorPuzzle.framework.js.unityweb",
+        codeUrl: buildUrl + "/BiosensorPuzzle.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "iGEMEducationGame",
+        productName: "BiosensorPuzzle",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
+
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
