@@ -26,6 +26,17 @@
     <script>
       document.dispatchEvent( new KeyboardEvent( "keydown",{key: "a" })) ;
       console.log("keydown");
+
+      document.body.addEventListener('click', () => console.log('clicked'))
+      const evt = new MouseEvent("click", {
+        view: window,
+        bubbles: true,
+        cancelable: true,
+        clientX: 20,
+      });
+      document.body.dispatchEvent(evt);
+
+
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
